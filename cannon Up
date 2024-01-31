@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+    public class cannonup : MonoBehaviour
+    {
+    public GameObject cannonball;
+    public Transform spawnpointUp;
+    public void UpCannonFiring()
+        {
+        GameObject.Instantiate(cannonball, spawnpointUp.position, spawnpointUp.rotation);
+        }
+    public void AddStartingForce()
+    {
+        Vector2 direction = new Vector2(0, -1);
+        
+    }
+    }
