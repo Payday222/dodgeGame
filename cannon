@@ -1,0 +1,48 @@
+using System;
+using UnityEngine;
+public class Cannon : MonoBehaviour
+{
+    cannonRight cannonRight;
+    cannonleft cannonLeft;
+    cannonup cannonup;
+    GameObject leftCannon;
+    GameObject rightCannon;
+    GameObject upCannon;
+    public void Awake()
+    {
+        cannonRight = rightCannon.GetComponent<cannonRight>();
+        cannonLeft = leftCannon.GetComponent<cannonleft>();
+        cannonup = cannonup.GetComponent<cannonup>();
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Invoke("WhichCannon", 0.5f);
+        }
+    }
+    public void WhichCannon()
+    {
+        System.Random cannonChoice = new System.Random();
+        int whichCannonFiring = cannonChoice.Next(1, 4);
+        switch (whichCannonFiring)
+        {
+
+            case 1: //right cannon
+                cannonRight.RightCannonFiring();
+                break;
+            case 2: //left cannon
+                this.cannonLeft.LeftCannonFiring();
+                break;
+            case 3: //up cannon
+                cannonup.UpCannonFiring();
+                break; 
+            default:
+                Console.WriteLine("This is not possible!");
+                break; 
+
+        }
+
+
+    }
+}
