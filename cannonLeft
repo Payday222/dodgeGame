@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+    public class cannonleft : MonoBehaviour
+    {
+    public GameObject cannonball;
+    public Transform spawnpointLeft;
+  public void LeftCannonFiring()
+        {
+        GameObject.Instantiate(cannonball, spawnpointLeft.position, spawnpointLeft.rotation);
+        }
+    }
