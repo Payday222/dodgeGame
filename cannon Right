@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class cannonRight : MonoBehaviour
+{
+    public GameObject cannonball;
+    public Transform spawnpointRight;
+
+    public void RightCannonFiring()
+    {
+        GameObject.Instantiate(cannonball, spawnpointRight.position, spawnpointRight.rotation);
+    }
+}
