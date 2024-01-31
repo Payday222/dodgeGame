@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class cannonball : MonoBehaviour
+{
+    private void OnCollisionEnter(Collision collision)
+    {
+        Application.Quit();
+        //-1/3hp
+    }
+    private void Update()
+    {
+        positionCheck();
+    }
+    [SerializeField]
+    Vector2 spawnpointRight =  new Vector2(10, 0.5f);
+    Vector2 spawnpointUp = new Vector2(0, 3.5f);
+    Vector2 spawnpointLeft = new Vector2(-10, 0.5f);
+    Vector2 destination = new Vector2(0, 0);
+    Rigidbody2D _rigidbody;
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
+    void positionCheck()
+    {
+        if (_rigidbody.position == spawnpointRight)
+        {
+            _rigidbody.velocity = destination;
+
+        } else if(_rigidbody.position == spawnpointUp)
+        {
+            _rigidbody.velocity = destination;
+
+        } else if(_rigidbody.position == spawnpointLeft)
+        {
+            _rigidbody.velocity = destination;
+        }
+
+    }
+}
